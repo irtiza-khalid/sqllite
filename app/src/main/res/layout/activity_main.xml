@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:background="@drawable/splash">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"
+        android:hint="NAME">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="REG NUMBER">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="FATHER NAME">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/adress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fname"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="ADDRESS">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/adress"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="GENDER">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gender"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="EDUCATION">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/education"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="20dp"
+        android:hint="PHONE NUMBER">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#C8C8B3"
+        android:text="SUBMIT"
+        android:textColor="@color/black"
+        android:textStyle="bold"></Button>
+
+    <Button
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sub"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#C8C8B3"
+        android:text="VIEW RECORD"
+        android:textColor="@color/black"
+        android:textStyle="bold"></Button>
+
+</RelativeLayout>
