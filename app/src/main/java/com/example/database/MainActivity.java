@@ -4,8 +4,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +16,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper db;
     EditText id,nam,fnam,adres,educatio,phon,gende;
-    Button sub,vie;
+    Button sub,vie,up,coun;
+    public int count=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +33,10 @@ public class MainActivity extends AppCompatActivity {
         phon=(EditText) findViewById(R.id.phone);
         gende=(EditText) findViewById(R.id.gender);
 sub=(Button) findViewById(R.id.sub);
+        up=(Button) findViewById(R.id.update);
 
         vie=(Button) findViewById(R.id.view);
+        coun=(Button) findViewById(R.id.count);
 
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +50,9 @@ sub=(Button) findViewById(R.id.sub);
                 String phonetext=phon.getText().toString();
 
                 boolean checkinserteddata=db.insertdata(nametext,idtext,fathernametext,adresstext,gendertext,educationtext,phonetext);
-              if(checkinserteddata==true)
-                  Toast.makeText(MainActivity.this,"new entry inserted",Toast.LENGTH_SHORT).show();
+              if(checkinserteddata==true){
+                  count++;
+                  Toast.makeText(MainActivity.this,"new entry inserted",Toast.LENGTH_SHORT).show();}
               else
                   Toast.makeText(MainActivity.this,"new entry not inserted",Toast.LENGTH_SHORT).show();
 
@@ -56,7 +62,7 @@ sub=(Button) findViewById(R.id.sub);
 vie.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        Cursor res=db.getData();
+      Cursor res=db.getData();
         if(res.getCount()==0)
         {
             Toast.makeText(MainActivity.this,"no Entry exists",Toast.LENGTH_SHORT).show();
@@ -81,6 +87,33 @@ vie.setOnClickListener(new View.OnClickListener() {
         builder.show();
     }
 });
+        up.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nametext=nam.getText().toString();
+                String idtext=id.getText().toString();
+                String fathernametext=fnam.getText().toString();
+                String adresstext=adres.getText().toString();
+                String gendertext=gende.getText().toString();
+                String educationtext=educatio.getText().toString();
+                String phonetext=phon.getText().toString();
+
+                boolean checkupdatedata=db.updatedata(nametext,idtext,fathernametext,adresstext,gendertext,educationtext,phonetext);
+                if(checkupdatedata==true)
+                    Toast.makeText(MainActivity.this,"Entry updated",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(MainActivity.this,"Entry not updated",Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
+        coun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(MainActivity.this,"Number of rows :) "+db.count(),Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }

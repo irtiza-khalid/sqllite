@@ -10,11 +10,12 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
 
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
-        android:hint="NAME">
+        android:hint="NAME"
+        android:minHeight="48dp">
 
     </EditText>
 
@@ -25,7 +26,8 @@
         android:layout_below="@+id/name"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="REG NUMBER">
+        android:hint="REG NUMBER"
+        android:minHeight="48dp">
 
     </EditText>
 
@@ -36,7 +38,8 @@
         android:layout_below="@+id/id"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="FATHER NAME">
+        android:hint="FATHER NAME"
+        android:minHeight="48dp">
 
     </EditText>
 
@@ -47,7 +50,8 @@
         android:layout_below="@+id/fname"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="ADDRESS">
+        android:hint="ADDRESS"
+        android:minHeight="48dp">
 
     </EditText>
 
@@ -58,7 +62,8 @@
         android:layout_below="@+id/adress"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="GENDER">
+        android:hint="GENDER"
+        android:minHeight="48dp">
 
     </EditText>
 
@@ -69,7 +74,8 @@
         android:layout_below="@+id/gender"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:hint="EDUCATION">
+        android:hint="EDUCATION"
+        android:minHeight="48dp">
 
     </EditText>
 
@@ -81,33 +87,77 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="2dp"
         android:layout_marginRight="20dp"
-        android:hint="PHONE NUMBER">
+        android:hint="PHONE NUMBER"
+        android:minHeight="48dp">
 
     </EditText>
 
-    <Button
-        android:id="@+id/sub"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/hhy"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/phone"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
 
-        android:layout_marginTop="50dp"
-        android:backgroundTint="#C8C8B3"
-        android:text="SUBMIT"
-        android:textColor="@color/black"
-        android:textStyle="bold"></Button>
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/view"
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:layout_marginRight="7dp"
+            android:backgroundTint="#C8C8B3"
+            android:text="SUBMIT"
+            android:textColor="@color/black"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="7dp"
+
+            android:backgroundTint="#C8C8B3"
+            android:text="VIEW RECORD"
+            android:textColor="@color/black"
+            android:textStyle="bold"></Button>
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="7dp"
+            android:backgroundTint="#C8C8B3"
+            android:text="update"
+            android:textColor="@color/black"
+            android:textStyle="bold"></Button>
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/sub"
+        android:layout_below="@+id/hhy"
+        android:orientation="horizontal"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#C8C8B3"
-        android:text="VIEW RECORD"
-        android:textColor="@color/black"
-        android:textStyle="bold"></Button>
+        android:layout_marginTop="30dp"
+        >
+        <Button
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="7dp"
+            android:backgroundTint="#C8C8B3"
+            android:text="Count record"
+            android:textColor="@color/black"
+            android:textStyle="bold"></Button>
+
+    </LinearLayout>
 </RelativeLayout>
