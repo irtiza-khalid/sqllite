@@ -62,7 +62,11 @@ sub=(Button) findViewById(R.id.sub);
 vie.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-      Cursor res=db.getData();
+        Intent intent =new Intent(MainActivity.this,view.class) ;
+        startActivity(intent);
+    }
+});
+      /*Cursor res=db.getData();
         if(res.getCount()==0)
         {
             Toast.makeText(MainActivity.this,"no Entry exists",Toast.LENGTH_SHORT).show();
@@ -86,7 +90,7 @@ vie.setOnClickListener(new View.OnClickListener() {
         builder.setMessage(buffer.toString());
         builder.show();
     }
-});
+});*/
         up.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
